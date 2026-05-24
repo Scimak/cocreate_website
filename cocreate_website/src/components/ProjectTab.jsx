@@ -1,17 +1,22 @@
 import React, { useState } from "react";
-import heroImg from "../assets/hero.png";
+import heroImg from "/assets/hero.png";
 var expand = function () {};
 
-function ProjectTab() {
+function ProjectTab({
+  projectName = "Project Name",
+  projectImage = "/assets/hero.png",
+  imageText = "Project Image",
+  projectDescription = "lorem",
+}) {
   const [show, setShow] = useState(false);
   return (
     <div
       style={{
         padding: "15px",
-        height: show ? "300px" : "30px",
+        height: show ? "300px" : "20px",
         cursor: show ? "pointer" : "auto",
         overflow: "hidden",
-        backgroundColor: show ? "rgb(255, 236, 236)" : "white",
+        backgroundColor: show ? "#FDFCEA" : "white",
         borderRadius: "15px",
         transition: "all 0.4s ease-in-out",
         width: "770px", //hardcoded width values
@@ -20,16 +25,20 @@ function ProjectTab() {
     >
       <h2
         style={{
+          fontFamily: "Inter, serif",
           fontSize: "2rem",
           textAlign: "left",
           width: "100%",
           margin: "0",
+          fontStyle: "italic",
+          color: "grey",
+          fontWeight: "lighter",
         }}
         onMouseEnter={() => {
           setShow(true);
         }}
       >
-        Project Name
+        {projectName}
       </h2>
       {show && (
         <div
@@ -48,18 +57,13 @@ function ProjectTab() {
               width: "500px", //hardcoded width value
             }}
           >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Perspiciatis ducimus sapiente voluptatem odio voluptates rem est
-            eius architecto esse! Hic voluptatem sapiente reiciendis harum
-            veritatis accusantium inventore architecto sint nostrum, quia, ab
-            sed culpa soluta iusto dolores eligendi ipsa explicabo
-            exercitationem? Laborum architecto, animi id ipsa beatae.
+            {projectDescription}
           </p>
 
           <img
-            src={heroImg}
-            alt="Pretend this is a project"
-            title="pretend this is an project image"
+            src={projectImage}
+            alt={imageText}
+            title={imageText}
             style={{ float: "right" }}
             width="200px" //hardcoded width value
           />
