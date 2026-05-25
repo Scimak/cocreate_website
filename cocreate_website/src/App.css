@@ -5,7 +5,10 @@
 
 body {
   padding: 0;
-  margin: 0;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-family: "Arial", sans-serif;
+  overflow-x: hidden;
 }
 
 .link {
@@ -14,12 +17,16 @@ body {
   padding: 10px;
   margin: 0 20px;
   font-size: 1.5rem;
-  font-family: serif; /*font family not working fsr*/
+  font-family: "Arial", sans-serif; /*font family not working fsr*/
   border-radius: 8px;
 }
 
+.link:active {
+  color: #61fff2;
+}
+
 .link:hover {
-  background-color: #36978f;
+  color: #f4f4f4;
 }
 
 nav {
@@ -30,6 +37,149 @@ nav {
   padding: 10px;
   top: 0;
   left: 0;
-  width: 100%;
-  margin: 0;
+  width: 100vw;
+  margin: -2%;
 }
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroSection,
+#heroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #2c7e77;
+  margin-left: -2%;
+  margin-right: -2%;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.container1 {
+  background-color: antiquewhite;
+  margin-top: 4%;
+  padding: 4%;
+  padding-bottom: 0;
+  border-radius: 4% 4% 0% 0%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  align-items: center; /* Vertically centers the text and image */
+  gap: 20px; /* Adds space between the text and image */
+}
+.container2 {
+  background-color: antiquewhite;
+  margin-top: 0;
+  padding: 4%;
+  padding-top: 0;
+  border-radius: 0% 0% 10% 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  align-items: center; /* Vertically centers the text and image */
+  gap: 20px; /* Adds space between the text and image */
+}
+#dr {
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  padding: 0;
+  float: right; /* Vertically centers the image */
+  /* Ensures the image covers the container without distortion */
+  /* max-width: 70%; */
+}
+
+.text {
+  float: left; /* Takes up the remaining space */
+  font-size: 2rem;
+  color: #303030;
+}
+
+.profile-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dr {
+  display: block;
+  width: 180px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.caption {
+  text-align: center;
+  font-size: 1rem;
+  color: #606060;
+  margin-top: 12px;
+  width: 100%;
+  display: block;
+}
+
+.Projectcontainer {
+  display: flex;
+  background-color: #2c7e77;
+  padding: 20px;
+  gap: 20px;
+  padding: 4%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageProject {
+  float: right;
+  width: 80%;
+  height: auto;
+}
+
+.textProject {
+  float: left;
+  width: 20%;
+  height: auto;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.catchphrase {
+  color: #545555;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+
+.catchphrase2 {
+  color: #f8f8f8;
+  font-style: italic;
+  font-weight: normal;
+}
+
+h2 {
+  color: #474747;
+  margin-left: 4%;
+}
+/* #dr {
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  padding: 0;
+  float: right;
+}
+
+.text {
+  float: left;
+  font-size: 2rem;
+  color: #303030;
+} */

@@ -2,8 +2,11 @@ import { useState } from "react";
 import Header from "./components/Header";
 import "./App.css";
 import ProjectsPage from "./components/ProjectsPage";
+import HomePage from "./components/HomePage";
 import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 function App() {
+  const logoSrc = "/assets/hero.png";
+
   return (
     <div>
       <BrowserRouter>
@@ -21,7 +24,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Navigate to="/Home" replace />}></Route>
-          <Route path="/Home"></Route>
+          <Route path="/Home" element={<HomePage logoSrc={logoSrc} />}></Route>
           <Route path="/About"></Route> {/*change to about page} */}
           <Route path="/Projects" element={<ProjectsPage />}></Route>
         </Routes>
