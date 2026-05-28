@@ -19,7 +19,8 @@ function ProjectTab({
         backgroundColor: show ? "#FDFCEA" : "white",
         borderRadius: "15px",
         transition: "all 0.4s ease-in-out",
-        width: "770px", //hardcoded width values
+        width: "100%",
+        maxWidth: "770px",
       }}
       onMouseLeave={(e) => setShow(false)}
     >
@@ -46,6 +47,8 @@ function ProjectTab({
             paddingTop: "30px",
             display: "flex",
             flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "center",
           }}
         >
           <p
@@ -54,7 +57,8 @@ function ProjectTab({
               paddingRight: "30px",
               paddingLeft: "30px",
               paddingTop: "15px",
-              width: "500px", //hardcoded width value
+              width: "100%",
+              maxWidth: "500px",
             }}
           >
             {projectDescription}
@@ -64,8 +68,12 @@ function ProjectTab({
             src={projectImage}
             alt={imageText}
             title={imageText}
-            style={{ float: "right" }}
-            width="200px" //hardcoded width value
+            style={{
+              width: "200px",
+              maxWidth: "100%",
+              height: "auto",
+              margin: "0 auto",
+            }}
           />
         </div>
       )}
