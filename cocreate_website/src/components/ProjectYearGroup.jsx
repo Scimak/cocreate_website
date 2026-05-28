@@ -7,7 +7,7 @@ function ProjectYearGroup({ year = "2026" }) {
       style={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "left",
         padding: "30px 0",
       }}
     >
@@ -21,7 +21,7 @@ function ProjectYearGroup({ year = "2026" }) {
       >
         {year}
       </h2>
-      <div>
+      <div style={{ width: "100%", paddingRight: "2%" }}>
         {/* potentially some fetch code here that fetches projects per year */}
         <ProjectTab />
         <ProjectTab />
