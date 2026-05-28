@@ -3,19 +3,31 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   padding: 0;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin: 0;
   font-family: "Arial", sans-serif;
-  overflow-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .link {
   color: #fecd1f;
   text-decoration: none;
   padding: 10px;
-  margin: 0 20px;
+  margin: 10px 15px;
   font-size: 1.5rem;
   font-family: "Arial", sans-serif; /*font family not working fsr*/
   border-radius: 8px;
@@ -38,10 +50,12 @@ body {
   padding: 10px;
   top: 0;
   left: 0;
-  width: 100vw;
   margin: -2% -2% 0 -2%;
   /* height: 68px; */
   height: 11vh;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 #logo {
@@ -57,52 +71,57 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #2c7e77;
-  margin-left: -2%;
-  margin-right: -2%;
 
-  width: 100vw;
-  height: 100vh;
+  background-color: #2c7e77;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 2%;
 }
 
 .container1 {
   background-color: antiquewhite;
-  margin-top: 4%;
-  padding: 4%;
-  padding-bottom: 0;
-  border-radius: 4% 4% 0% 0%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 2% auto 0;
+  padding: 3%;
+  border-radius: 40px 40px 0 0;
+  max-width: 1100px;
+  width: calc(100% - 40px);
   display: flex;
   align-items: center; /* Vertically centers the text and image */
-  gap: 20px; /* Adds space between the text and image */
+  gap: 24px; /* Adds space between the text and image */
+  flex-wrap: wrap;
 }
 .container2 {
   background-color: antiquewhite;
-  margin-top: 0;
-  padding: 4%;
+  margin: 0 auto 0;
   padding-top: 0;
-  border-radius: 0% 0% 10% 10%;
-  margin-left: 5%;
-  margin-right: 5%;
+  padding: 3%;
+  border-radius: 0 0 40px 40px;
+  max-width: 1100px;
+  width: calc(100% - 40px);
   display: flex;
   align-items: center; /* Vertically centers the text and image */
-  gap: 20px; /* Adds space between the text and image */
+  gap: 24px; /* Adds space between the text and image */
+  flex-wrap: wrap;
+}
+.image {
+  flex: 0 0 36%;
+  max-width: 36%;
+  width: 36%;
+}
+.text {
+  flex: 1 1 60%;
+  max-width: 60%;
+  width: 60%;
+  font-size: 1.8rem;
+  color: #303030;
 }
 #dr {
-  width: 80%;
+  width: 100%;
+  max-width: 100%;
   height: auto;
+  object-fit: cover;
   border-radius: 50%;
-  padding: 0;
-  float: right; /* Vertically centers the image */
-  /* Ensures the image covers the container without distortion */
-  /* max-width: 70%; */
-}
-
-.text {
-  float: left; /* Takes up the remaining space */
-  font-size: 2rem;
-  color: #303030;
+  margin: 0 auto;
 }
 
 .profile-figure {
@@ -114,6 +133,7 @@ body {
 #dr {
   display: block;
   width: 180px;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 50%;
@@ -132,28 +152,35 @@ body {
 .Projectcontainer {
   display: flex;
   background-color: #2c7e77;
-  padding: 20px;
-  gap: 20px;
-  padding: 4%;
-  margin-left: 5%;
-  margin-right: 5%;
-  border-radius: 10%;
-  justify-content: center;
+  padding: 3.5%;
+  gap: 24px;
+  margin: 3% auto;
+  max-width: 1100px;
+  width: min(1100px, calc(100% - 36px));
+  border-radius: 40px;
+  justify-content: space-between;
   align-items: center;
-}
-
-.imageProject {
-  float: right;
-  width: 80%;
-  height: auto;
+  flex-wrap: wrap;
 }
 
 .textProject {
-  float: left;
-  width: 20%;
-  height: auto;
-  font-size: 1.4rem;
+  flex: 1 1 55%;
+  max-width: 55%;
+  width: 55%;
+  font-size: 1.25rem;
   color: #ffffff;
+}
+
+.imageProject {
+  flex: 0 0 35%;
+  max-width: 35%;
+  width: 35%;
+}
+
+.imageProject img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .catchphrase {
@@ -171,7 +198,34 @@ body {
 
 h2 {
   color: #474747;
-  margin-left: 4%;
+  margin-left: 13%;
+  padding-left: 3.5%;
+}
+
+@media (max-width: 768px) {
+  .container1,
+  .container2,
+  .Projectcontainer {
+    flex-direction: column;
+    align-items: center;
+    margin: 4% 2% 0 2%;
+    width: auto;
+  }
+
+  .text,
+  .textProject {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+
+  #dr,
+  .imageProject {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    float: none;
+  }
 }
 /* #dr {
   width: 80%;
