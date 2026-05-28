@@ -1,5 +1,4 @@
 import React from "react";
-import AboutPageCard from "../components/AboutPageCard";
 import { easeInOut, motion } from "motion/react";
 import ParagraphUp from "../components/ParagraphUp";
 import ImageSlider from "../components/ImageSlider";

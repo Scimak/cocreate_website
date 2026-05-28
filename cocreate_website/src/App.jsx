@@ -13,6 +13,7 @@ import {
   parsePath,
 } from "react-router-dom";
 import SingleProjectPage from "./components/SingleProjectPage";
+import About from "./pages/About";
 function App() {
   const logoSrc = "/assets/hero.png";
 
@@ -34,7 +35,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/Home" replace />}></Route>
           <Route path="/Home" element={<HomePage logoSrc={logoSrc} />}></Route>
-          <Route path="/About"></Route> {/*change to about page} */}
+          <Route path="/About" element={<About></About>}></Route>{" "}
+          {/*change to about page} */}
           <Route path="/Projects" element={<ProjectsPage />}></Route>
           {/* We need to figure something out so that everytime a project is clicked
            we select it with its own id rather than generic selection. here we can use useParams() inside SingleProjectPage to get id of project*/}
