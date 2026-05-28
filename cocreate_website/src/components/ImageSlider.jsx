@@ -19,7 +19,7 @@ export default function ImageSlider({ img, alt, text, subtext }) {
           position: "absolute",
           top: "10px",
           right: isHovered ? "120px" : "40px",
-          width: "800px",
+          width: "min(80vw, 480px)",
           height: "180px",
           background: "#FDFCEA",
           borderRadius: "30px",
