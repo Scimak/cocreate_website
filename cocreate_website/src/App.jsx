@@ -3,14 +3,23 @@ import Header from "./components/Header";
 import "./App.css";
 import ProjectsPage from "./components/ProjectsPage";
 import HomePage from "./components/HomePage";
-import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
+import Footer from "./components/Footer";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+  parsePath,
+} from "react-router-dom";
+import SingleProjectPage from "./components/SingleProjectPage";
 function App() {
   const logoSrc = "/assets/hero.png";
 
   return (
     <div>
       <BrowserRouter>
-        <nav>
+        <nav id="headerNav">
           <Link to="/Home" className="link">
             Home
           </Link>
@@ -27,8 +36,15 @@ function App() {
           <Route path="/Home" element={<HomePage logoSrc={logoSrc} />}></Route>
           <Route path="/About"></Route> {/*change to about page} */}
           <Route path="/Projects" element={<ProjectsPage />}></Route>
+          {/* We need to figure something out so that everytime a project is clicked
+           we select it with its own id rather than generic selection. here we can use useParams() inside SingleProjectPage to get id of project*/}
+          <Route
+            path="/Projects/:projectId"
+            element={<SingleProjectPage />}
+          ></Route>
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

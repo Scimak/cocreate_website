@@ -13,7 +13,7 @@ function ProjectTab({
     <div
       style={{
         padding: "15px",
-        height: show ? "300px" : "20px",
+        height: show ? "300px" : "50px",
         cursor: show ? "pointer" : "auto",
         overflow: "hidden",
         backgroundColor: show ? "#FDFCEA" : "white",

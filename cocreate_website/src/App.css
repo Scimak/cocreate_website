@@ -1,7 +1,7 @@
 /* this is messing up projects page */
-/* * {
+* {
   box-sizing: border-box;
-} */
+}
 
 body {
   padding: 0;
@@ -29,16 +29,19 @@ body {
   color: #f4f4f4;
 }
 
-nav {
+#headerNav {
   background-color: #2c7e77;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: sticky; /* remove this if we don't want it to stay*/
   padding: 10px;
   top: 0;
   left: 0;
   width: 100vw;
-  margin: -2%;
+  margin: -2% -2% 0 -2%;
+  /* height: 68px; */
+  height: 11vh;
 }
 
 #logo {
@@ -183,3 +186,51 @@ h2 {
   font-size: 2rem;
   color: #303030;
 } */
+
+#footer {
+  font-size: 1.5rem;
+  background-color: #2c7e77;
+  padding: 5vh 1vw 1vh 1vw;
+  margin-left: -2%;
+  margin-right: -2%;
+  margin-bottom: -2%;
+  min-width: 100%;
+  color: white;
+}
+#socialLinks i {
+  font-size: 2rem;
+  padding: 2vh 1vw;
+}
+#socialLinks i:hover {
+  cursor: pointer;
+}
+
+#cocreateRights {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 10vh;
+}
+
+#singleProjectPage {
+  text-align: center;
+  margin-top: 7vh;
+  width: 70vw;
+  justify-self: center;
+}
+
+#singleProjectPage h2 {
+  font-size: 2rem;
+}
+
+#singleProjectPage p {
+  text-align: start;
+  width: 60vw;
+  justify-self: center;
+}
+#singleProjectPage img {
+  width: 70vw;
+  justify-self: center;
+}
+#singleProjectPage section {
+  /* max-height: 89vh; */
+}
