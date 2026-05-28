@@ -12,8 +12,8 @@ function ProjectTab({
   return (
     <div
       style={{
-        padding: "15px",
-        height: show ? "300px" : "50px",
+        padding: "2%",
+        height: show ? "300px" : "55px",
         cursor: show ? "pointer" : "auto",
         overflow: "hidden",
         backgroundColor: show ? "#FDFCEA" : "white",
@@ -23,6 +23,9 @@ function ProjectTab({
         maxWidth: "770px",
       }}
       onMouseLeave={(e) => setShow(false)}
+      onMouseEnter={() => {
+        setShow(true);
+      }}
     >
       <h2
         style={{
@@ -34,9 +37,6 @@ function ProjectTab({
           fontStyle: "italic",
           color: "grey",
           fontWeight: "lighter",
-        }}
-        onMouseEnter={() => {
-          setShow(true);
         }}
       >
         {projectName}
@@ -57,8 +57,8 @@ function ProjectTab({
               paddingRight: "30px",
               paddingLeft: "30px",
               paddingTop: "15px",
-              width: "100%",
-              maxWidth: "500px",
+              width: "70%",
+              // maxWidth: "500px",
             }}
           >
             {projectDescription}
@@ -69,8 +69,8 @@ function ProjectTab({
             alt={imageText}
             title={imageText}
             style={{
-              width: "200px",
-              maxWidth: "100%",
+              width: "26%",
+              // maxWidth: "200px",
               height: "auto",
               margin: "0 auto",
             }}
