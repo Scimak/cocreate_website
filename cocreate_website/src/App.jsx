@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import "./App.css";
 import ProjectsPage from "./components/ProjectsPage";
+import About from "./pages/About";
 import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/Home" replace />}></Route>
           <Route path="/Home"></Route>
-          <Route path="/About"></Route> {/*change to about page} */}
+          <Route path="/About" element={<About />}></Route>
           <Route path="/Projects" element={<ProjectsPage />}></Route>
         </Routes>
       </BrowserRouter>
