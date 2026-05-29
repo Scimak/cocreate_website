@@ -51,6 +51,7 @@ function App() {
               path="/Projects/:projectId"
               element={<SingleProjectPage />}
             ></Route>
+            <Route path="/Admin" element={<Admin />}></Route>
           </Routes>
         </div>
       </BrowserRouter>
