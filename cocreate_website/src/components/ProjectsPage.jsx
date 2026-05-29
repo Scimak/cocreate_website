@@ -1,13 +1,30 @@
 import React from "react";
+import { useEffect, useState } from "react";
 
 import ProjectYearGroup from "./ProjectYearGroup";
 function ProjectsPage() {
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost/cocreate/fetch_projects.php")
+      .then((response) => {
+        return response.json();
+      })
+      .then((projectsJson) => {
+        console.log(projectsJson);
+        setProjects(projectsJson);
+      })
+      .catch((error) => {
+        console.log("error: " + error);
+      });
+  }, []);
   return (
     <div style={{}}>
-      {/* perhaps some fetch code here to know what year we have projects in and stuff and then sort them */}
-      <ProjectYearGroup year="2026" />
-      <ProjectYearGroup year="2025" />
-      <ProjectYearGroup year="2024" />
+      {console.log(Object.entries(projects))}
+      {Object.entries(projects).map(([year, yearProjects]) => {
+        return (
+          <ProjectYearGroup key={year} year={year} projects={yearProjects} />
+        );
+      })}
     </div>
   );
 }

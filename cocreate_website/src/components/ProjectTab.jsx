@@ -3,8 +3,9 @@ import heroImg from "/assets/hero.png";
 var expand = function () {};
 
 function ProjectTab({
+  projectId = 1,
   projectName = "Project Name",
-  projectImage = "/assets/hero.png",
+  projectImages = ["/assets/hero.png"],
   imageText = "Project Image",
   projectDescription = "lorem",
 }) {
@@ -57,22 +58,22 @@ function ProjectTab({
               paddingRight: "30px",
               paddingLeft: "30px",
               paddingTop: "15px",
-              width: "70%",
+              width: "60%",
               // maxWidth: "500px",
             }}
           >
             {projectDescription}
           </p>
-
           <img
-            src={projectImage}
+            src={projectImages[0].image_url}
             alt={imageText}
             title={imageText}
             style={{
-              width: "26%",
+              width: "36%",
               // maxWidth: "200px",
               height: "auto",
               margin: "0 auto",
+              borderRadius: "8px",
             }}
           />
         </div>
