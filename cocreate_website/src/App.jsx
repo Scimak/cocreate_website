@@ -54,9 +54,8 @@ function App() {
             <Route path="/Admin" element={<Admin />}></Route>
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
-
-      <Footer />
     </div>
   );
 }
