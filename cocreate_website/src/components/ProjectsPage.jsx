@@ -10,6 +10,8 @@ function ProjectsPage() {
         return response.json();
       })
       .then((projectsJson) => {
+        projectsJson = Object.entries(projectsJson);
+        projectsJson.sort((a, b) => b[0] - a[0]);
         console.log(projectsJson);
         setProjects(projectsJson);
       })
@@ -19,8 +21,8 @@ function ProjectsPage() {
   }, []);
   return (
     <div style={{}}>
-      {console.log(Object.entries(projects))}
-      {Object.entries(projects).map(([year, yearProjects]) => {
+      {/* {console.log(projects)} */}
+      {projects.map(([year, yearProjects]) => {
         return (
           <ProjectYearGroup key={year} year={year} projects={yearProjects} />
         );
