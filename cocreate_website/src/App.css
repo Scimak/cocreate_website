@@ -543,6 +543,7 @@ h2 {
   width: 300px;
   border-radius: 5px;
   border: 1px solid #949494;
+  font-family: "Arial", sans-serif;
 }
 .admin textarea {
   padding: 10px;
@@ -565,6 +566,15 @@ h2 {
   color: #2c7e77;
   margin-left: auto;
   text-align: center;
+}
+.admin h3 {
+  font-size: 1.2rem;
+
+  color: #2c7e77;
+  margin-left: auto;
+  text-align: center;
+  flex-wrap: wrap;
+  max-width: 400px;
 }
 .adminButton {
   display: flex;
