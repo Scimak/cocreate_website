@@ -18,7 +18,9 @@ function App() {
   const logoSrc = "/assets/hero.png";
 
   return (
-    <div>
+    <div
+      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+    >
       <BrowserRouter>
         <nav id="headerNav">
           <Link to="/Home" className="link">
@@ -32,20 +34,25 @@ function App() {
           </Link>
         </nav>
 
-        <Routes>
-          <Route path="/" element={<Navigate to="/Home" replace />}></Route>
-          <Route path="/Home" element={<HomePage logoSrc={logoSrc} />}></Route>
-          <Route path="/About" element={<About></About>}></Route>{" "}
-          {/*change to about page} */}
-          <Route path="/Projects" element={<ProjectsPage />}></Route>
-          {/* We need to figure something out so that everytime a project is clicked
+        <div style={{ flex: "1" }}>
+          <Routes>
+            <Route path="/" element={<Navigate to="/Home" replace />}></Route>
+            <Route
+              path="/Home"
+              element={<HomePage logoSrc={logoSrc} />}
+            ></Route>
+            <Route path="/About" element={<About></About>}></Route>
+            <Route path="/Projects" element={<ProjectsPage />}></Route>
+            {/* We need to figure something out so that everytime a project is clicked
            we select it with its own id rather than generic selection. here we can use useParams() inside SingleProjectPage to get id of project*/}
-          <Route
-            path="/Projects/:projectId"
-            element={<SingleProjectPage />}
-          ></Route>
-        </Routes>
+            <Route
+              path="/Projects/:projectId"
+              element={<SingleProjectPage />}
+            ></Route>
+          </Routes>
+        </div>
       </BrowserRouter>
+
       <Footer />
     </div>
   );

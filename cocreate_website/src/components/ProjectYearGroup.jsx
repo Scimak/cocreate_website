@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectTab from "./ProjectTab";
 
-function ProjectYearGroup({ year = "2026" }) {
+function ProjectYearGroup({ year = "2026", projects = [] }) {
   return (
     <div
       style={{
@@ -22,14 +22,17 @@ function ProjectYearGroup({ year = "2026" }) {
         {year}
       </h2>
       <div style={{ width: "100%", paddingRight: "2%" }}>
-        {/* potentially some fetch code here that fetches projects per year */}
-        <ProjectTab />
-        <ProjectTab />
-        <ProjectTab />
-        <ProjectTab />
-        <ProjectTab />
-        <ProjectTab />
-        <ProjectTab />
+        {projects.map((project) => {
+          return (
+            <ProjectTab
+              key={project.project_id}
+              projectId={project.project_id}
+              projectName={project.project_name}
+              projectDescription={project.project_description}
+              projectImages={project.images}
+            />
+          );
+        })}
       </div>
     </div>
   );

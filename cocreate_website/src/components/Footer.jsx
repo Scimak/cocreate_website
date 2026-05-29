@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer id="footer">
+    <footer id="footer" style={{ bottom: "0" }}>
       <nav id="footerNav">
         <div id="socialLinks">
           {/*Social Media Links*/}
