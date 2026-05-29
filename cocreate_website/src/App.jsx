@@ -14,6 +14,8 @@ import {
 } from "react-router-dom";
 import SingleProjectPage from "./components/SingleProjectPage";
 import About from "./pages/About";
+import Admin from "./pages/Admin";
+
 function App() {
   const logoSrc = "/assets/hero.png";
 
@@ -44,6 +46,7 @@ function App() {
             path="/Projects/:projectId"
             element={<SingleProjectPage />}
           ></Route>
+          <Route path="/Admin" element={<Admin />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer />
