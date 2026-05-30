@@ -322,6 +322,7 @@ svg {
 .subhead {
   text-align: center;
   padding-top: 30px;
+  font-weight: normal;
   padding-left: 0px;
   margin: 0;
   font-size: 2rem;
