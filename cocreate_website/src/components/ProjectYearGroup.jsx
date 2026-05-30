@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectTab from "./ProjectTab";
 
-function ProjectYearGroup({ year = "2026", projects = [] }) {
+function ProjectYearGroup({ year = "2026", projects = [], base_URL }) {
   return (
     <div
       style={{
@@ -30,6 +30,7 @@ function ProjectYearGroup({ year = "2026", projects = [] }) {
               projectName={project.project_name}
               projectDescription={project.project_description}
               projectImages={project.images}
+              base_URL={base_URL}
             />
           );
         })}
