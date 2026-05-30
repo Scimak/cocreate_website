@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $projectDescription = isset($_POST["description"])?$_POST["description"]:"";
     $projectDate = isset($_POST["date"])?$_POST["date"]:"";
     $eventDescription = isset($_POST["eventOrAchievement"])?$_POST["eventOrAchievement"]:"";
-        $eventImage = isset($_FILES["eventImage"])?$_FILES["eventImage"]:"";
         // $eventUrl = isset($_POST["eventUrl"])?$_POST["eventUrl"]:"";
     
 
@@ -67,21 +66,45 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
             if ($connection->query($addImageSQL) == FALSE){
                 die(json_encode(["unable to add image"]));
             }
-            
-            $addEventSQL = "INSERT INTO $eventsTable VALUES (NULL, $projectId, '$eventDescription', $eventUrl)";
-            if ($connection->query($addEventSQL) == FALSE){
-                die(json_encode(["unable to add event"]));
-            }
-    
-}
-          
-            echo json_encode(["success" => TRUE, "image" => $destination]);
 
-           
+
+            if ($eventDescription != ""){
+                if (isset($_FILES["eventImage"])){
+                    $eventFileName = $_FILES["eventImage"]["name"];
+                    $eventTmpName = $_FILES["eventImage"]["tmp_name"];
+                    $eventFileError = $_FILES["eventImage"]["error"];
+
+                    if ($eventFileError !== UPLOAD_ERR_OK) {
+                        die(json_encode([
+                            "error" => "Upload failed"
+                        ]));
+                    }
+
+                    $eventExtension = pathinfo($eventFileName, PATHINFO_EXTENSION);
+
+                    $newEventFileName =
+                    uniqid("project_", true) . ".". $eventExtension;
+
+                    $eventUploadDirectory = "uploads/images/";
+
+                    $eventDestination = $eventUploadDirectory . $newEventFileName;
+
+                    if (!move_uploaded_file($eventTmpName, $eventDestination)) {
+                        die(json_encode(["error" => "Could not save file"]));
+                    }
+
+
+                    $addEventSQL = "INSERT INTO $eventsTable VALUES (NULL, $projectId, '$eventDescription', '/$eventDestination')";
+                    if ($connection->query($addEventSQL) == FALSE){
+                            die(json_encode(["unable to add event"]));
+                    }
+                }
+            }    
         }
-         
-        
-    }
+          
+        echo json_encode(["success" => TRUE, "image" => $destination]);
+    }  
+}
 
 
 ?>
