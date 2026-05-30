@@ -11,6 +11,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $projectName = isset($_POST["name"])?$_POST["name"]:"";
     $projectDescription = isset($_POST["description"])?$_POST["description"]:"";
     $projectDate = isset($_POST["date"])?$_POST["date"]:"";
+    $eventDescription = isset($_POST["eventOrAchievement"])?$_POST["eventOrAchievement"]:"";
+        $eventImage = isset($_FILES["eventImage"])?$_FILES["eventImage"]:"";
+        // $eventUrl = isset($_POST["eventUrl"])?$_POST["eventUrl"]:"";
     
 
     if ($projectName != "" and $projectDescription != "" and $projectDate != ""){
@@ -18,9 +21,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
         $username = "root";
         $password = "";
         $dbname = "cocreate";
-
         $projectsTable = "projects";
         $imagesTable = "project_images";
+        $eventsTable = "events";
+
 
         $connection = new mysqli($servername, $username, $password, $dbname);
 
@@ -63,14 +67,21 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
             if ($connection->query($addImageSQL) == FALSE){
                 die(json_encode(["unable to add image"]));
             }
-
+            
+            $addEventSQL = "INSERT INTO $eventsTable VALUES (NULL, $projectId, '$eventDescription', $eventUrl)";
+            if ($connection->query($addEventSQL) == FALSE){
+                die(json_encode(["unable to add event"]));
+            }
+    
+}
+          
             echo json_encode(["success" => TRUE, "image" => $destination]);
+
+           
         }
+         
         
     }
 
-    
-    
-}
 
 ?>

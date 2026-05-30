@@ -88,6 +88,12 @@ svg {
   z-index: 3;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .leaders img {
   border-radius: 50%;
   width: 200px;
@@ -286,6 +292,42 @@ svg {
   font-size: 1.8rem;
   color: #303030;
 }
+.text2 {
+  flex: 1 1 60%;
+  max-width: 100%;
+  width: 60%;
+  font-size: 1.8rem;
+  color: #303030;
+}
+
+.superContainer {
+  height: 110vh;
+  width: 100vw;
+  padding-top: 16rem;
+  overflow-x: auto;
+  justify-content: center;
+}
+
+.projectCards {
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.line {
+  height: auto;
+  display: block;
+  padding: 3rem;
+  margin: 0 auto;
+}
+.subhead {
+  text-align: center;
+  padding-top: 30px;
+  font-weight: normal;
+  padding-left: 0px;
+  margin: 0;
+  font-size: 2rem;
+  color: #000000;
+}
 #dr {
   width: 100%;
   max-width: 100%;
@@ -320,18 +362,43 @@ svg {
   display: block;
 }
 
-.Projectcontainer {
+.projectContainer {
   display: flex;
   background-color: #2c7e77;
   padding: 3.5%;
   gap: 24px;
   margin: 3% auto;
+  margin-top: 0px;
   max-width: 1100px;
   width: min(1100px, calc(100% - 36px));
   border-radius: 40px;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100vw;
+  height: auto;
+  overscroll-behavior-x: contain;
+  overflow-x: hidden;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+.projectContainer figure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  width: 100%;
+}
+
+#horizontalScrollSection {
+  margin: 0;
+  padding: 0;
+  height: 60vh;
 }
 
 .textProject {
@@ -346,6 +413,15 @@ svg {
   flex: 0 0 35%;
   max-width: 35%;
   width: 35%;
+  margin: 0;
+  position: sticky;
+  padding: 3rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  max-width: 90;
+  width: fit-content;
 }
 
 .imageProject img {
@@ -359,12 +435,23 @@ svg {
   font-style: italic;
   font-weight: normal;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  font-size: 4rem;
 }
 
 .catchphrase2 {
   color: #f8f8f8;
   font-style: italic;
   font-weight: normal;
+  margin: 0;
+  text-align: center;
+  padding: 0;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  font-size: 3rem;
 }
 
 h2 {
