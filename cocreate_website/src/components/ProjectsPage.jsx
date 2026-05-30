@@ -2,10 +2,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 import ProjectYearGroup from "./ProjectYearGroup";
-function ProjectsPage() {
+function ProjectsPage({ base_URL }) {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
-    fetch("http://localhost/cocreate/fetch_projects.php")
+    fetch(base_URL + "/fetch_projects.php")
       .then((response) => {
         return response.json();
       })
@@ -24,7 +24,12 @@ function ProjectsPage() {
       {/* {console.log(projects)} */}
       {projects.map(([year, yearProjects]) => {
         return (
-          <ProjectYearGroup key={year} year={year} projects={yearProjects} />
+          <ProjectYearGroup
+            key={year}
+            year={year}
+            projects={yearProjects}
+            base_URL={base_URL}
+          />
         );
       })}
     </div>

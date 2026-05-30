@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Admin() {
+function Admin({ base_URL }) {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [img, setImg] = useState(null);
@@ -66,7 +66,7 @@ function Admin() {
       data.append("eventImage", eventImage);
     }
 
-    fetch("", {
+    fetch(base_URL + "/add_project.php", {
       method: "POST",
       body: data,
     })
@@ -167,7 +167,7 @@ function Admin() {
         /> */}
         <br />
         <input
-          type="number"
+          type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           placeholder="YYYY (year the project started)"

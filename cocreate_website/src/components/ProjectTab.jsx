@@ -8,6 +8,7 @@ function ProjectTab({
   projectImages = ["/assets/hero.png"],
   imageText = "Project Image",
   projectDescription = "lorem",
+  base_URL,
 }) {
   const [show, setShow] = useState(false);
   return (
@@ -65,7 +66,7 @@ function ProjectTab({
             {projectDescription}
           </p>
           <img
-            src={projectImages[0].image_url}
+            src={base_URL + projectImages[0].image_url}
             alt={imageText}
             title={imageText}
             style={{

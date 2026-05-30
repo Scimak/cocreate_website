@@ -18,6 +18,7 @@ import Admin from "./pages/Admin";
 
 function App() {
   const logoSrc = "/assets/hero.png";
+  const BASE_URL = "http://localhost/cocreate";
 
   return (
     <div
@@ -44,14 +45,20 @@ function App() {
               element={<HomePage logoSrc={logoSrc} />}
             ></Route>
             <Route path="/About" element={<About></About>}></Route>
-            <Route path="/Projects" element={<ProjectsPage />}></Route>
+            <Route
+              path="/Projects"
+              element={<ProjectsPage base_URL={BASE_URL} />}
+            ></Route>
             {/* We need to figure something out so that everytime a project is clicked
            we select it with its own id rather than generic selection. here we can use useParams() inside SingleProjectPage to get id of project*/}
             <Route
               path="/Projects/:projectId"
               element={<SingleProjectPage />}
             ></Route>
-            <Route path="/Admin" element={<Admin />}></Route>
+            <Route
+              path="/Admin"
+              element={<Admin base_URL={BASE_URL} />}
+            ></Route>
           </Routes>
         </div>
         <Footer />
