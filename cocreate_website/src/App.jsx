@@ -53,7 +53,7 @@ function App() {
            we select it with its own id rather than generic selection. here we can use useParams() inside SingleProjectPage to get id of project*/}
             <Route
               path="/Projects/:projectId"
-              element={<SingleProjectPage />}
+              element={<SingleProjectPage base_URL={BASE_URL} />}
             ></Route>
             <Route
               path="/Admin"

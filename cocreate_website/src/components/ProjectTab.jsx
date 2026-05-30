@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import heroImg from "/assets/hero.png";
 var expand = function () {};
 
@@ -11,6 +12,7 @@ function ProjectTab({
   base_URL,
 }) {
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -27,6 +29,9 @@ function ProjectTab({
       onMouseLeave={(e) => setShow(false)}
       onMouseEnter={() => {
         setShow(true);
+      }}
+      onMouseDown={() => {
+        navigate(`/projects/${projectId}`);
       }}
     >
       <h2
